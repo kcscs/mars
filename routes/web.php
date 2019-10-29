@@ -55,4 +55,9 @@ Route::middleware(['auth', 'log', 'verified'])->group(function () {
     Route::post('/admin/registrations/reject', 'Admin\RegistrationsController@reject')->name('admin.registrations.reject');
     Route::post('/admin/registrations/show', 'Admin\RegistrationsController@show')->name('admin.registrations.show');
 
+    Route::post('/courses/registerCourse', 'CourseController@registerCourse')->name('courses.registerCourse');
 });
+
+Route::get('/courses', function() {
+    return view('courses.app');
+})->name('courses');
